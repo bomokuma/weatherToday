@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherToday</string>
+    <!--placeholder strings-->
+    <string name="placeholder1" translatable="false">Placeholder</string>
+    <string name="placeholder2" translatable="false">Longer Placeholder</string>
+    <string name="placeholder3" translatable="false">Longest long than longer placeholder</string>
+    <string name="placeholder4" translatable="false">Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua.
+    </string>
+</resources>

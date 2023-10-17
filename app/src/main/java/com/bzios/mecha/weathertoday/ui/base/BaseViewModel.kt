@@ -1,8 +1,7 @@
-package com.bzios.mecha.weathertoday
+package com.bzios.mecha.weathertoday.ui.base
 
 import androidx.lifecycle.ViewModel
 import java.lang.ref.WeakReference
-import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel<N> : ViewModel() {
 

@@ -25,13 +25,20 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+        }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -40,7 +47,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:${System.getProperty("kotlinVersion")}")
+    implementation("androidx.core:core-ktx:${System.getProperty("coreKtxVersion")}")
     implementation("androidx.appcompat:appcompat:${System.getProperty("appCompatVersion")}")
     implementation("com.google.android.material:material:${System.getProperty("materialVersion")}")
     implementation("androidx.constraintlayout:constraintlayout:${System.getProperty("constraintLayoutVersion")}")

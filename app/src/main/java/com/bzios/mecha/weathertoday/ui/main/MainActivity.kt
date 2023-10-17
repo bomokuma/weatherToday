@@ -1,9 +1,10 @@
-package com.bzios.mecha.weathertoday
+package com.bzios.mecha.weathertoday.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import com.bzios.mecha.weathertoday.ui.base.BaseActivity
 import com.bzios.mecha.weathertoday.databinding.ActivityMainBinding
+import com.bzios.mecha.weathertoday.model.Youtube
 
 class MainActivity : BaseActivity<MainViewModel>(), MainNavigator {
 
@@ -27,7 +28,27 @@ class MainActivity : BaseActivity<MainViewModel>(), MainNavigator {
         }
     }
 
-    override fun setUpView() {}
+    override fun setUpView() {
 
-    override fun initial() {}
+    }
+
+    override fun initial() {
+        getSimpleList()
+    }
+
+    override fun showLoading() {}
+
+    override fun hideLoading() {}
+
+    override fun getSimpleList() {
+        mainViewModel?.getSimpleList()
+    }
+
+    override fun getSimpleListSuccess(youtubeList: MutableList<Youtube>) {
+
+    }
+
+    override fun getSimpleListFailed(exception: Exception) {
+
+    }
 }

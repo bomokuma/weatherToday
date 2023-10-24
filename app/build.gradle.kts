@@ -66,6 +66,7 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:${System.getProperty("swipeRefreshLayoutVersion")}")
     implementation("androidx.preference:preference-ktx:${System.getProperty("preferenceKtx")}")
     implementation("androidx.security:security-crypto:${System.getProperty("securityCryptoVersion")}")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     testImplementation("junit:junit:${System.getProperty("junitVersion")}")
     androidTestImplementation("androidx.test.ext:junit:${System.getProperty("junitExtVersion")}")
     androidTestImplementation("androidx.test.espresso:espresso-core:${System.getProperty("espressoCoreVersion")}")

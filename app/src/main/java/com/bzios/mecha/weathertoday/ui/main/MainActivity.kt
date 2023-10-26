@@ -42,6 +42,10 @@ class MainActivity : BaseActivity<MainViewModel>(), MainNavigator {
 
     override fun initial() {
         getSimpleList()
+
+        mainViewModel?.youtubeLiveData?.observe(this) { youtubeList ->
+            youtubeListAdapter?.submitList(youtubeList)
+        }
     }
 
     override fun showLoading() {}

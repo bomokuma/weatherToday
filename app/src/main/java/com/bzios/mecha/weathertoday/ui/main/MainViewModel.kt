@@ -1,7 +1,10 @@
 package com.bzios.mecha.weathertoday.ui.main
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.bzios.mecha.weathertoday.impl.YoutubeRepositoryImpl
 import com.bzios.mecha.weathertoday.model.ResultWrapper
+import com.bzios.mecha.weathertoday.model.Youtube
 import com.bzios.mecha.weathertoday.networking.PortalService
 import com.bzios.mecha.weathertoday.networking.service.YoutubeApiService
 import com.bzios.mecha.weathertoday.ui.base.BaseViewModel
@@ -24,6 +27,9 @@ class MainViewModel : BaseViewModel<MainNavigator>(), CoroutineScope {
 
     private var youtubeRepositoryImpl: YoutubeRepositoryImpl
 
+    private var youtubeMutableLiveData = MutableLiveData<MutableList<Youtube>>()
+    val youtubeLiveData : LiveData<MutableList<Youtube>> = youtubeMutableLiveData
+
     init {
         val youtubeApiService = PortalService.createPortal(YoutubeApiService::class.java)
         youtubeRepositoryImpl = YoutubeRepositoryImpl(youtubeApiService)
@@ -42,7 +48,8 @@ class MainViewModel : BaseViewModel<MainNavigator>(), CoroutineScope {
                     }
                     val datalist = data.data
                     datalist?.let { dataYoutubeList ->
-                        navigator?.getSimpleListSuccess(dataYoutubeList)
+                        youtubeMutableLiveData.postValue(dataYoutubeList)
+                        //navigator?.getSimpleListSuccess(dataYoutubeList)
                     } ?: run {
                         navigator?.getSimpleListFailed(Exception("Data null"))
                     }

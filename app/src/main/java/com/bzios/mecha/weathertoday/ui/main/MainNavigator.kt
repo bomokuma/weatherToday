@@ -10,4 +10,6 @@ interface MainNavigator {
     fun getSimpleList()
     fun getSimpleListSuccess(youtubeList : MutableList<Youtube>)
     fun getSimpleListFailed(exception : Exception)
+
+    fun startWorker(tag : String)
 }
